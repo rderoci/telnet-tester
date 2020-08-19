@@ -1,7 +1,7 @@
-(login:)
-(password:)
-(swa-abc-123#)
-(                          ^ error
+{login:)
+{password:)
+{swa-abc-123#}
+{                          ^ error
 %30 : erro qualquer
-swa-abc-123#)
-(swa-abc-123#)
+swa-abc-123#}
+{swa-abc-123#}

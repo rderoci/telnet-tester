@@ -35,7 +35,7 @@ let commandNum = 0;
 let listOfCommands = [];
 
 fs.readFile(program.output, 'utf8', function(err, contents) {
-    const pattern = /\((.*?)\)/gs;
+    const pattern = /\{(.*?)\}/gs;
     let found;
     while(found = pattern.exec(contents)) {
         listOfCommands.push(found[1]);
@@ -47,16 +47,19 @@ const server = net.createServer(con => {
 
     con.write(listOfCommands[commandNum]);
 
+    process.stdout.write(`${chalk.bgBlack('System Request: : ')}`);
+    process.stdout.write(`${chalk.bgBlackBright(listOfCommands[commandNum]+' | ')}`);
+
     carrier.carry(con, line => {
-        process.stdout.write(`${chalk.bgBlack('Received Command: ')}`);
-        process.stdout.write(`${chalk.bgBlackBright(line + '\n')}`);
+        process.stdout.write(`${chalk.bgBlack('User Reply: ')}`);
+        process.stdout.write(`${chalk.bgBlackBright(line) + '\n'}`);
 
         let command = listOfCommands[++commandNum];
         if(typeof command === 'undefined') {
             command = 'out_of_commands['+program.output+']';
         }
-        process.stdout.write(`${chalk.bgBlack('Replies with: ')}`);
-        process.stdout.write(`${chalk.bgBlackBright(command + '\n')}`);
+        process.stdout.write(`${chalk.bgBlack('System Request: ')}`);
+        process.stdout.write(`${chalk.bgBlackBright(command)+' | '}`);
 
 
         con.write(command);
