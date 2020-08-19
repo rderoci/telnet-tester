@@ -1,12 +1,14 @@
 
-<div>
-  <div>
-     <a href="https://www.linkedin.com/in/romuloderoci/" > <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View User Name’s profile on LinkedIn"></a>
-  </div>
-</div>
 
+<div style="position: absolute; right: 10px">
+     <a href="https://www.linkedin.com/in/romuloderoci/" > <img src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View User Name’s profile on LinkedIn"></a>
+</div>
+<br/>
 
 # Telnet Tester
+<img src="https://github.com/rderoci/telnet-tester/blob/master/telnet-server-example.png" border="0">
+
+<img src="https://github.com/rderoci/telnet-tester/blob/master/telnet-client-example.png" border="0">
 
 Telnet Tester is a telnet server that read clients input and reply with pre determined outputs given in a file 
 
@@ -52,4 +54,3 @@ swa-abc-123# INPUTING FIRST COMMAND
 swa-abc-123# INPUTING ANOTHER COMMAND
 swa-abc-123# INPUTING LAST COMMAND
 ```
-
